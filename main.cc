@@ -5,15 +5,22 @@
 
 int main()
 {
-	std::vector<Player> vplayers;
-	int noOfPlayers = 0;
 	std::cout << "How many players? ";
+	int noOfPlayers = 0;
 	std::cin >> noOfPlayers;
+	if (noOfPlayers < 1)
+	{
+		std::cout << "too few players" << std::endl;
+		return 0;
+	}
+
 	std::string pName;
+	std::vector<Player> vplayers;
 	for(int i = 1; i <= noOfPlayers; i++) {
-		std::cout << "Enter Player " << i << " " << "Name ";
+		std::cout << "Enter Player " << i << "'s " << "Name ";
 		std::cin >> pName;
-		vplayers.push_back(pName);
+		if(!pName.empty())
+			vplayers.push_back(pName);
 	}
 
 	GuessingGame game(vplayers);
