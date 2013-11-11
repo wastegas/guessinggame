@@ -1,4 +1,6 @@
 # backup files
 *~
+# swap files
+*.swp
 #build dir
 build/
