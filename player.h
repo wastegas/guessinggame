@@ -41,7 +41,8 @@ public:
 	friend std::ostream& operator<<(std::ostream& out, const Player &cPlayer)
 	{
 		out << "Player " << cPlayer.m_strName << " guessed " << cPlayer.m_guessedNumber
-			<< " number of guesses " << cPlayer.m_guessCtr << " is correct " 			<< cPlayer.isCorrect;
+			<< " number of guesses " << cPlayer.m_guessCtr << " is correct " 			
+			<< cPlayer.isCorrect;
 		return out;
 	}
 
