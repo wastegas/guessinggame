@@ -46,7 +46,7 @@ public:
 	friend std::ostream& operator<<(std::ostream& out, const GuessingGame &gGame)
 	{
 		for(auto iter = gGame.player.cbegin(); iter != gGame.player.cend(); iter++) {
-			out << *(iter);
+			out << *(iter) << std::endl;
 		}
 		return out;
 	}

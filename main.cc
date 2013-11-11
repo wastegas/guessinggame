@@ -17,24 +17,18 @@ int main()
 	}
 
 	GuessingGame game(vplayers);
-	std::cout << game << std::endl;
+
 	while(1)
 	{
 		game.makeGuess();
 		if(game.isWinner())
 		{
 			std::cout << game << std::endl;
+			std::cout << "*** game over ***" << std::endl;
 			break;
 		}
 		std::cout << game << std::endl;
 	}
 	
-	
-	
-	while(1)
-	{
-
-	}
-
 	return 0;
 }
