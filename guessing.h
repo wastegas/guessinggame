@@ -3,17 +3,18 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <random>
 #include "player.h"
 
 class GuessingGame {
 private:
-	Player player;
+	std::vector<Player> player;
 	int m_theNumber = 0;
 	GuessingGame();
 public:
-	GuessingGame(std::string strName)
-		: player(strName), m_theNumber(makeNumber()) {}
+	GuessingGame(std::vector<Player> vName)
+		: player(vName), m_theNumber(makeNumber()) {}
 	
 	int makeNumber()
 	{
@@ -25,21 +26,28 @@ public:
 
 	void makeGuess()
 	{
-		player.guessNumber();
-		player.guessedCorrect(m_theNumber);
+		for(auto iter = player.begin(); iter != player.end(); iter++) {
+			iter->guessNumber();
+			iter->guessedCorrect(m_theNumber);
+		}
 	}
 
 	bool isWinner()
 	{
-		if(player.gotCorrect())
-			return true;
+		for(auto iter = player.begin(); iter != player.end(); iter++)
+		{
+			if(iter->gotCorrect())
+				return true;
+		}
 		return false;
 	}
 
 
 	friend std::ostream& operator<<(std::ostream& out, const GuessingGame &gGame)
 	{
-		out << gGame.player;
+		for(auto iter = gGame.player.cbegin(); iter != gGame.player.cend(); iter++) {
+			out << *(iter);
+		}
 		return out;
 	}
 	
