@@ -4,8 +4,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <random>
 #include "player.h"
+#include "getrand.h"
 
 class GuessingGame {
 private:
@@ -18,10 +18,10 @@ public:
 	
 	int makeNumber()
 	{
-		std::random_device rd;
+/*		std::random_device rd;
 		std::mt19937 gen(rd());
 		std::uniform_int_distribution<> dis(1, 10);
-		return dis(gen);
+*/		return getRand();
 	}
 
 	void makeGuess()

@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include <random>
+#include "getrand.h"
 
 class Player {
 private:
@@ -20,11 +20,11 @@ public:
 
 	void guessNumber()
 	{
-		std::random_device rd;
+		/*std::random_device rd;
 		std::mt19937 gen(rd());
 		std::uniform_int_distribution<> dis(1, 10);
-		++m_guessCtr;
-		m_guessedNumber = dis(gen);
+		++m_guessCtr;*/
+		m_guessedNumber = getRand();
 	}
 
 	void guessedCorrect(int &theNumber)
