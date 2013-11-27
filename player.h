@@ -20,10 +20,6 @@ public:
 
 	void guessNumber()
 	{
-		/*std::random_device rd;
-		std::mt19937 gen(rd());
-		std::uniform_int_distribution<> dis(1, 10);
-		++m_guessCtr;*/
 		m_guessedNumber = getRand();
 	}
 
